@@ -1,9 +1,15 @@
 
-# README
-
-## Descrição do Projeto
+# Blog App
 
 Este repositório contém o front-end de um sistema de gerenciamento de posts. O projeto foi desenvolvido com React e Styled Components, com foco em responsividade, acessibilidade e uma boa experiência de uso. Ele se comunica com um back-end através de APIs REST para operações de leitura, criação, edição e exclusão de posts.
+
+## Índice
+
+- [Funcionalidades](#funcionalidades)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Pré-requisitos](#pre-requisitos)
+- [Guia de Uso](#guia-de-uso)
+- [Documentação](#Documentação)
 
 ## Funcionalidades
 
@@ -25,25 +31,67 @@ Este repositório contém o front-end de um sistema de gerenciamento de posts. O
 
 ---
 
-## Setup Inicial
-
-### Pré-requisitos
+## Pré-requisitos
 
 Antes de começar, certifique-se de que você tenha as seguintes ferramentas instaladas:
 
-- **Node.js** (Recomendado: v16 ou superior)
-- **npm** ou **yarn** (gerenciadores de pacotes)
+- **Node.js**: [Link para download](https://nodejs.org/en/download/)
+- **npm** : O `npm` é instalado automaticamente com o Node.js.
+- **MongoDB**: Caso esteja usando uma instalação local do MongoDB, certifique-se de tê-lo rodando. Caso contrário, utilize um serviço de banco de dados em nuvem como o [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
+
+### Configuração do Back-End (API)
+
+1. **Clone o repositório**
+
+   Abra um terminal e execute o seguinte comando:
+
+   ```bash
+   git clone https://github.com/gPerazolli/blog-api
+   cd blog-api
+
+2. **Configuração do Ambiente**
+
+   Crie um arquivo .env na raiz do projeto com as seguintes variáveis de ambiente:
+
+   ```bash
+    MONGO_URI=mongodb://usuario1:123456@mongo_db:27017/blog?authSource=admin
+    JWT_SECRET=chaveSecreta1245Boa
+   ```
+     Observação: As credenciais do MongoDB e o segredo do JWT podem ser alterados conforme necessário.
+
+### Executando a Aplicação
+
+1. **Inicie os containers**
+
+    No diretório raiz do projeto, execute:
+
+    ```bash
+       docker-compose up -d
+    ```
+    Este comando iniciará os containers do MongoDB e da API.
+
+2. **Aguarde a Inicialização**
+
+   Aguarde alguns instantes para garantir que todos os serviços estejam prontos. Você pode verificar os logs do container da aplicação para confirmar que a API está em execução:
+
+     ```bash
+     docker-compose logs app
+
+3. **Acesse a API**
+
+   A API estará disponível em http://localhost:3000.
+
 
 ### Instalação
 
 1. Clone o repositório para o seu diretório local:
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+   git clone https://github.com/gPerazolli/blog-frontend
    ```
 
 2. Navegue até o diretório do projeto:
    ```bash
-   cd seu-repositorio
+   cd blog-frontend
    ```
 
 3. Instale as dependências usando `npm`:
@@ -65,7 +113,7 @@ Se você estiver se conectando a um backend, pode ser necessário configurar var
 Crie um arquivo `.env` na raiz do seu projeto e adicione as variáveis necessárias, como:
 
 ```env
-REACT_APP_API_URL=http://localhost:5000/api
+REACT_APP_API_URL=http://localhost:3000
 ```
 
 ---
@@ -91,9 +139,9 @@ Rotas como a de administração estão protegidas. Se um usuário não estiver a
 
 ---
 
-## Licença
+## Documentação
 
-Este projeto está licenciado sob a [MIT License](LICENSE).
+A documentação completa do projeto pode ser acessada [aqui]().
 
 ---
 
