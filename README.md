@@ -1,70 +1,171 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# README
 
-## Available Scripts
+## Descrição do Projeto
 
-In the project directory, you can run:
+Este repositório contém o front-end de um sistema de gerenciamento de posts. O projeto foi desenvolvido com React e Styled Components, com foco em responsividade, acessibilidade e uma boa experiência de uso. Ele se comunica com um back-end através de APIs REST para operações de leitura, criação, edição e exclusão de posts.
 
-### `npm start`
+## Funcionalidades
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Página Inicial (HomePage)**: Exibe uma lista de posts.
+- **Página de Post (PostPage)**: Exibe os detalhes de um post individual.
+- **Página de Login**: Permite que administradores ou professores façam login para acessar a área de administração.
+- **Área de Administração**: Permite a criação, edição e exclusão de posts.
+- **Cadastro**: Página para registrar novos usuários (administradores ou professores).
+- **Criação e Edição de Posts**: Interface para criar e editar posts de forma simples e intuitiva.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Tecnologias Utilizadas
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **React**: Framework para construção da interface.
+- **Styled Components**: Biblioteca para estilização em JS, usada para criar componentes de estilo reutilizáveis e modulares.
+- **React Router**: Para roteamento e navegação entre as páginas.
+- **Axios**: Para realizar requisições HTTP para a API backend.
+- **React Hooks**: Para gerenciar estado e efeitos colaterais no React.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Arquitetura do Projeto
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Estrutura de Diretórios
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+/src
+  /assets                # Arquivos estáticos como imagens, fontes, etc.
+  /components            # Componentes reutilizáveis
+    /Layout              # Layout padrão da aplicação
+    /Feedback            # Componente de feedback (mensagens de sucesso ou erro)
+    /Header              # Cabeçalho da aplicação (barra de navegação)
+  /pages                 # Páginas da aplicação
+    HomePage.js          # Página inicial
+    PostPage.js          # Página do post individual
+    RegisterPage.js      # Página de cadastro
+    LoginPage.js         # Página de login
+    AdminPage.js         # Página de administração
+    CreatePostPage.js    # Página de criação de posts
+    EditPostPage.js      # Página de edição de posts
+  /services              # Funções para chamadas à API
+    api.js               # Interações com a API backend (CRUD de posts)
+    auth.js              # Funções relacionadas ao login e autenticação
+  /styles                # Arquivos de estilos globais
+    GlobalStyles.js      # Estilos globais
+  /routes                # Definição de rotas privadas e públicas
+    ProtectedRoute.js    # Rota protegida que exige autenticação
+  App.js                 # Componente principal da aplicação
+  index.js               # Ponto de entrada da aplicação
+```
 
-### `npm run eject`
+### Arquitetura
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Componentes**: Divididos entre componentes reutilizáveis (ex: botões, inputs, cabeçalho) e páginas específicas.
+- **Roteamento**: Usamos `React Router` para definir as rotas e proteger rotas que exigem autenticação.
+- **Gerenciamento de Estado**: O estado dos componentes é gerido usando `useState` e `useEffect` para chamadas assíncronas à API.
+- **Estilização**: Usamos `Styled Components` para definir estilos encapsulados e modulares, permitindo a reutilização e manutenção do código com maior facilidade.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Setup Inicial
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Pré-requisitos
 
-## Learn More
+Antes de começar, certifique-se de que você tenha as seguintes ferramentas instaladas:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Node.js** (Recomendado: v16 ou superior)
+- **npm** ou **yarn** (gerenciadores de pacotes)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Instalação
 
-### Code Splitting
+1. Clone o repositório para o seu diretório local:
+   ```bash
+   git clone https://github.com/seu-usuario/seu-repositorio.git
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. Navegue até o diretório do projeto:
+   ```bash
+   cd seu-repositorio
+   ```
 
-### Analyzing the Bundle Size
+3. Instale as dependências usando `npm` ou `yarn`:
+   ```bash
+   npm install
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   ou
 
-### Making a Progressive Web App
+   ```bash
+   yarn install
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+4. Inicie a aplicação no modo de desenvolvimento:
+   ```bash
+   npm start
+   ```
 
-### Advanced Configuration
+   ou
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+   ```bash
+   yarn start
+   ```
 
-### Deployment
+   Isso abrirá a aplicação no navegador, geralmente em `http://localhost:3000`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Variáveis de Ambiente
 
-### `npm run build` fails to minify
+Se você estiver se conectando a um backend, pode ser necessário configurar variáveis de ambiente para URLs de API, tokens de autenticação, entre outros.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Crie um arquivo `.env` na raiz do seu projeto e adicione as variáveis necessárias, como:
+
+```env
+REACT_APP_API_URL=http://localhost:5000/api
+```
+
+---
+
+## Guia de Uso
+
+### Página de Login
+
+A página de login permite que os administradores ou professores se autentiquem. Após o login bem-sucedido, eles serão redirecionados para a página de administração.
+
+### Página de Administração
+
+Na área de administração, você pode realizar as seguintes ações:
+
+- **Visualizar Posts**: A lista de todos os posts criados.
+- **Criar Novo Post**: Formulário para adicionar novos posts.
+- **Editar Post**: Ação para editar posts existentes.
+- **Excluir Post**: Exclusão de posts da plataforma.
+
+### Proteção de Rotas
+
+Rotas como a de administração estão protegidas. Se um usuário não estiver autenticado e tentar acessar uma rota protegida, ele será redirecionado para a página de login.
+
+### Feedback
+
+Após ações como criação, edição ou exclusão de posts, mensagens de feedback são exibidas para informar o sucesso ou erro das operações. Essas mensagens são exibidas com uma cor verde para sucesso e vermelha para erro.
+
+---
+
+## Contribuindo
+
+Se você deseja contribuir para este projeto, siga estas etapas:
+
+1. Fork o repositório.
+2. Crie uma nova branch (`git checkout -b feature/nova-funcionalidade`).
+3. Faça suas alterações.
+4. Commit suas mudanças (`git commit -am 'Adiciona nova funcionalidade'`).
+5. Envie para o seu repositório fork (`git push origin feature/nova-funcionalidade`).
+6. Abra um pull request para o repositório original.
+
+---
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
+
+---
+
+### Considerações Finais
+
+Esse modelo de README cobre desde o setup até as funcionalidades e detalhes da arquitetura do projeto. Modifique conforme necessário, dependendo de ajustes que possam ser feitos na sua aplicação ou detalhes adicionais que você queira incluir.
