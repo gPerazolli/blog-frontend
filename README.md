@@ -141,7 +141,7 @@ Rotas como a de administração estão protegidas. Se um usuário não estiver a
 
 ## Documentação
 
-A documentação completa do projeto pode ser acessada [aqui](docs).
+A documentação completa do projeto pode ser acessada [aqui](docs/Documentação-Técnica.pdf).
 
 ---
 
