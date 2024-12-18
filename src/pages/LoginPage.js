@@ -48,6 +48,15 @@ const Button = styled.button`
   }
 `;
 
+const RegisterButton = styled(Button)`
+  margin-top: 0.5rem;
+  background-color: #28a745;
+
+  &:hover {
+    background-color: #218838;
+  }
+`;
+
 const ErrorMessage = styled.p`
   color: red;
   font-size: 14px;
@@ -67,13 +76,17 @@ const LoginPage = () => {
     e.preventDefault();
 
     const result = await login(credentials);
-    console.log('Login result:', result);  
+    console.log('Login result:', result);
 
     if (result.success) {
       navigate('/admin');
     } else {
       setError(result.message);
     }
+  };
+
+  const handleRegisterRedirect = () => {
+    navigate('/register'); 
   };
 
   return (
@@ -99,6 +112,9 @@ const LoginPage = () => {
         />
         <Button type="submit">Entrar</Button>
       </Form>
+      <RegisterButton type="button" onClick={handleRegisterRedirect}>
+         Cadastre-se
+      </RegisterButton>
     </LoginContainer>
   );
 };
